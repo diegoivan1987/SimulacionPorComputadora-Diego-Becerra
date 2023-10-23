@@ -1,2 +1,2 @@
-![Captura de pantalla 2023-09-09 102131](https://github.com/diegoivan1987/SimulacionPorComputadora-Diego-Becerra/assets/47061340/6b78c389-4d74-4e53-84d1-4b5f682b441e)
-![Captura de pantalla 2023-09-09 102203](https://github.com/diegoivan1987/SimulacionPorComputadora-Diego-Becerra/assets/47061340/aa01f476-2e65-4962-b32b-ba06bf7ab864)
+![Captura de pantalla 2023-10-22 180301](https://github.com/diegoivan1987/SimulacionPorComputadora-Diego-Becerra/assets/47061340/df962974-f528-4e27-9a43-52c85a3b3b0c)
+![Captura de pantalla 2023-10-22 180632](https://github.com/diegoivan1987/SimulacionPorComputadora-Diego-Becerra/assets/47061340/3e4712e4-9648-499f-b54d-14ed5a10e6a4)
