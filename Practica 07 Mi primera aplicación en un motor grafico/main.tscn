@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyoan68k5c568"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ai1nc"]
+[ext_resource type="PackedScene" uid="uid://dikuexlo01dy8" path="res://BG.tscn" id="2_eaa5y"]
+[ext_resource type="AudioStream" uid="uid://dywqtoc0uliyw" path="res://sounds/Komiku_-_04_-_The_weekly_fair(chosic.com).mp3" id="3_rcgr5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ai1nc")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 472.0
+offset_top = 459.0
+offset_right = 661.0
+offset_bottom = 548.0
+text = "Jugar"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 207.0
+offset_top = 206.0
+offset_right = 928.0
+offset_bottom = 396.0
+theme_override_font_sizes/font_size = 22
+text = "Practica 07 Mi primera aplicación en un motor grafico
+Diego Ivan Becerra Gonzalez
+diego.bgonzalez@alumnos.udg.mx	Simulación por computadora
+José Luis David Bonilla Carranza
+12-11-2023"
+editable = false
+
+[node name="BG" parent="." instance=ExtResource("2_eaa5y")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rcgr5")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnyji1sv6rsxl"]
+
+[ext_resource type="PackedScene" uid="uid://dikuexlo01dy8" path="res://BG.tscn" id="1_f6lcx"]
+[ext_resource type="AudioStream" uid="uid://dywqtoc0uliyw" path="res://sounds/Komiku_-_04_-_The_weekly_fair(chosic.com).mp3" id="2_dxvd0"]
+
+[node name="Fin" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 400.0
+offset_top = 245.0
+offset_right = 709.0
+offset_bottom = 331.0
+theme_override_font_sizes/font_size = 48
+text = "Fin del juego"
+editable = false
+
+[node name="BG" parent="." instance=ExtResource("1_f6lcx")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dxvd0")
+autoplay = true

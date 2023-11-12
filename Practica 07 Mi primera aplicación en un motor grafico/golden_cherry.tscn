@@ -1,0 +1,100 @@
+[gd_scene load_steps=15 format=3 uid="uid://b383i2rqtdw3a"]
+
+[ext_resource type="Script" path="res://golden_cherry.gd" id="1_a363g"]
+[ext_resource type="Texture2D" uid="uid://1xgi2f3a8y3j" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/spritesheets/golden_cherry.png" id="1_nwssj"]
+[ext_resource type="Texture2D" uid="uid://cv8et18e1yjn1" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/item-feedback/item-feedback-1.png" id="3_qe2et"]
+[ext_resource type="Texture2D" uid="uid://cg0ob222wasvn" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/item-feedback/item-feedback-2.png" id="4_f5p5n"]
+[ext_resource type="Texture2D" uid="uid://bl2ww0fqn3kxh" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/item-feedback/item-feedback-3.png" id="5_r0jtp"]
+[ext_resource type="Texture2D" uid="uid://5piqq77gbgqh" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/sprites/item-feedback/item-feedback-4.png" id="6_d18lq"]
+[ext_resource type="AudioStream" uid="uid://f41x180cp2s2" path="res://sounds/powerUp.wav" id="7_xtc8j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x85f4"]
+atlas = ExtResource("1_nwssj")
+region = Rect2(0, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8otl"]
+atlas = ExtResource("1_nwssj")
+region = Rect2(21, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsq0a"]
+atlas = ExtResource("1_nwssj")
+region = Rect2(42, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60tha"]
+atlas = ExtResource("1_nwssj")
+region = Rect2(63, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1qr2"]
+atlas = ExtResource("1_nwssj")
+region = Rect2(84, 0, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n75hd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x85f4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8otl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsq0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60tha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1qr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60tha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsq0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8otl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qe2et")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f5p5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r0jtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d18lq")
+}],
+"loop": false,
+"name": &"Power",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dgktt"]
+radius = 11.6096
+
+[node name="GoldenCherry" type="Area2D"]
+script = ExtResource("1_a363g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n75hd")
+animation = &"Power"
+autoplay = "Idle"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.865892, 0.842535)
+shape = SubResource("CircleShape2D_dgktt")
+
+[node name="Power" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xtc8j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
