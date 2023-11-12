@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cns8uqsecox6q"]
+[gd_scene load_steps=15 format=3 uid="uid://cns8uqsecox6q"]
 
 [ext_resource type="PackedScene" uid="uid://dhk6q6klbofnl" path="res://Player/player.tscn" id="1_4lxwx"]
 [ext_resource type="Texture2D" uid="uid://chxalhw1buplr" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/tileset.png" id="1_f4d86"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Time.gd" id="6_pahlk"]
 [ext_resource type="PackedScene" uid="uid://cdinj66b77syw" path="res://cherry.tscn" id="7_3v0w0"]
 [ext_resource type="PackedScene" uid="uid://br8sceje30c2" path="res://door.tscn" id="8_vw4vx"]
+[ext_resource type="PackedScene" uid="uid://b383i2rqtdw3a" path="res://golden_cherry.tscn" id="9_86um8"]
 [ext_resource type="AudioStream" uid="uid://dywqtoc0uliyw" path="res://sounds/Komiku_-_04_-_The_weekly_fair(chosic.com).mp3" id="10_qp8w6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mbc8"]
@@ -480,7 +481,7 @@ position = Vector2(555, 575)
 position = Vector2(697, 574)
 
 [node name="Cherry" parent="." instance=ExtResource("7_3v0w0")]
-position = Vector2(810, 415)
+position = Vector2(160, 574)
 
 [node name="Door" parent="." instance=ExtResource("8_vw4vx")]
 position = Vector2(1119, 575)
@@ -488,3 +489,6 @@ position = Vector2(1119, 575)
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_qp8w6")
 autoplay = true
+
+[node name="GoldenCherry" parent="." instance=ExtResource("9_86um8")]
+position = Vector2(381, 575)
